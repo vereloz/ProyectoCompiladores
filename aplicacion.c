@@ -63,12 +63,12 @@ void *conexion(void *socket_desc)
 
     if(tam_bytes == 0)
     {
-        puts("cliente disconnected");
+        puts("El cliente se ha desconectado");
         fflush(stdout);
     }
     else if(tam_bytes == -1)
     {
-        perror("recv failed");
+        perror("recv falló");
     }
 
     return 0;
@@ -87,7 +87,7 @@ int main(int argc , char *argv[])
     socket_desc = socket(AF_INET , SOCK_STREAM , 0);
     if (socket_desc == -1)
     {
-        printf("Could not create socket");
+        printf("No se puso crear el socket");
     }
     if (gpioInitialise()<0) {
     			return -1; //Inicializando pigpio
@@ -144,4 +144,3 @@ int main(int argc , char *argv[])
 
     return 0;
 }
-
